@@ -1,0 +1,68 @@
+Offline Voice Assistant – Complete Project Pipeline
+Phase 1: Setup & Environment
+1. Install dependencies:
+pip install vosk sounddevice pyttsx3 numpy pyaudio noisereduce fuzzywuzzy python-Levenshtein ollama
+
+2. Download models:
+   - Speech Recognition: vosk-model-en-in-0.5 (Apache 2.0)
+   - LLM (Offline NLP): phi3 or mistral (MIT / Apache 2.0)
+   
+3. Folder Layout:
+voice_assistant/
+├── main.py
+├── stt.py
+├── nlp_model.py
+├── executor.py
+├── memory.json
+├── config.yaml
+└── requirements.txt
+Phase 2: Speech Recognition (STT)
+Goal: Real-time listening + high accuracy.
+
+- Initialize Vosk model with custom grammar
+- Apply noise reduction before recognition
+
+Example code snippet:
+from vosk import Model, KaldiRecognizer
+model = Model("vosk-model-en-in-0.5")
+rec = KaldiRecognizer(model, 16000, '["hey gng", "open github", "open chrome", "open edge", "vs code"]')
+Phase 3: NLP Model (Intent Understanding)
+Goal: Extract intent + entities using local LLM (Phi3 or Mistral via Ollama).
+
+Example code:
+subprocess.run(["ollama", "run", "phi3"], input=prompt.encode(), capture_output=True)
+Phase 4: Command Execution
+Goal: Execute system commands safely.
+
+Example:
+subprocess.run(["start", "msedge", "https://github.com"], shell=True)
+Phase 5: Context Memory
+Store conversation data in JSON.
+Example:
+remember("last_command", "open GitHub")
+Phase 6: Voice Output (TTS)
+Offline text-to-speech using pyttsx3.
+Example:
+engine.say("Opening GitHub in Edge")
+Phase 7: Combine Everything (main.py)
+Loop structure:
+1. Listen for "Hey GNG"
+2. Parse user command
+3. Execute intent
+4. Respond via TTS
+Phase 8: Accuracy Enhancements
+- Custom grammar for Vosk
+- Fuzzy matching
+- Audio denoising
+- NLP context refinement
+Phase 9: Optional Features
+- Wake word detection
+- Custom commands via YAML
+- Context memory
+- Secure mode for commands
+Phase 10: Packaging & Optimization
+- Use PyInstaller for .exe
+- Thread STT + NLP
+- Optimize model load time
+ 
+

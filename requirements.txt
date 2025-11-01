@@ -1,0 +1,23 @@
+vosk>=0.3.45
+sounddevice>=0.4.6
+pyttsx3>=2.90
+numpy>=1.21
+
+# Optional / dev
+tk>=0.1  # Tkinter comes with Python on most platforms; listed for clarity
+# Note: Ollama is not a pip package; install via its installer and ensure `ollama` is on PATH or set `ollama_path` in config.yaml
+# Recommended (optional) dependencies for full project
+vosk
+sounddevice
+pyttsx3
+numpy
+pyaudio
+noisereduce
+fuzzywuzzy
+python-Levenshtein
+ollama
+# Note: these are NOT required to run the skeleton. Install when ready to integrate real STT/LLM/TTS.
+# To enable voice responses install:
+# pip install pyttsx3
+# Ollama is a separate tool (https://ollama.com/) — install and run the Ollama daemon to use local LLMs.
+# LLM-driven decision mode: to have the LLM decide actions (open URL, launch app, etc.) install and run Ollama and enable `use_ollama_decider` in `config.yaml`.

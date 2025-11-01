@@ -1,0 +1,12 @@
+{
+  "last_command": {
+    "text": "open spotify",
+    "intent": "open_app",
+    "entities": {
+      "app": {
+        "type": "app",
+        "value": "spotify"
+      }
+    }
+  }
+}

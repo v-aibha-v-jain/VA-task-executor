@@ -1,0 +1,13 @@
+# Minimal configuration for the offline assistant skeleton
+wake_word: hello
+allow_execution: false
+use_ollama: true
+llm_model: phi3
+allow_tts: true
+use_ollama_decider: false
+# When true the assistant will process all input immediately and won't require the wake word.
+always_listen: true
+allowed_commands:
+  - open_url
+  - open_app
+  - tell_time

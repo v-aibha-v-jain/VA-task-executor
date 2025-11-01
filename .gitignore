@@ -1,0 +1,33 @@
+# Python related
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+env/
+venv/
+.venv/
+
+# Virtualenv / pyenv
+/.venv/
+/.env/
+venv/
+ENV/
+
+# Editor / OS
+.vscode/
+.idea/
+*.sln
+*.swp
+Thumbs.db
+desktop.ini
+
+# Packaging
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+
+# vosk-model-en-in-0.5/
+vosk-model-en-in-0.5/
