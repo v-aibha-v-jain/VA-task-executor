@@ -11,7 +11,7 @@ Features
 - Clickable GUI launcher included: `run_voice_assistant_ui.bat`
 
 Quick start (recommended)
-
+ 
 1. Create a virtual environment and activate it (Windows PowerShell):
 
 ```powershell
