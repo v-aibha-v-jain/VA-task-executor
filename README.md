@@ -4,7 +4,7 @@ This repository contains an offline voice assistant implemented in Python. It us
 
 Features
 
-- Real-time local STT using Vosk (optional — falls back to typed input when missing)
+- Real-time local STT using Vosk (optional - falls back to typed input when missing)
 - Local LLM decider integration via the `ollama` CLI (optional)
 - TTS via `pyttsx3` (optional)
 - Safe execution mode (dry-run by default) and an option to allow direct execution of actions
@@ -54,7 +54,7 @@ Troubleshooting
 License
 
 - This project is provided as-is. Add your preferred license if you plan to distribute.
-  Offline Voice Assistant — skeleton
+  Offline Voice Assistant - skeleton
 
 This repository contains a minimal, dependency-free skeleton for an offline voice assistant. It's intended as a starting point to integrate:
 
@@ -64,13 +64,13 @@ This repository contains a minimal, dependency-free skeleton for an offline voic
 
 What I created:
 
-- `voice_assistant/main.py` — runner with `run_interactive()` and `run_test()` (one-shot smoke test)
-- `voice_assistant/stt.py` — simulated STT (reads stdin)
-- `voice_assistant/nlp_model.py` — tiny rule-based intent parser
-- `voice_assistant/executor.py` — safe executor (dry-run by default)
-- `voice_assistant/config.yaml` — wake word and options
-- `voice_assistant/memory.json` — persistent memory
-- `voice_assistant/requirements.txt` — recommended optional deps
+- `voice_assistant/main.py` - runner with `run_interactive()` and `run_test()` (one-shot smoke test)
+- `voice_assistant/stt.py` - simulated STT (reads stdin)
+- `voice_assistant/nlp_model.py` - tiny rule-based intent parser
+- `voice_assistant/executor.py` - safe executor (dry-run by default)
+- `voice_assistant/config.yaml` - wake word and options
+- `voice_assistant/memory.json` - persistent memory
+- `voice_assistant/requirements.txt` - recommended optional deps
 
 Quick smoke test (one-shot, no external deps):
 
@@ -99,7 +99,7 @@ Next steps to integrate full features:
 
 Wake-word / always-on listening
 
-- By default this skeleton used a wake word (e.g., "hey gng"). If you find the wake word annoying you can disable it and let the assistant process all input immediately by setting `always_listen: true` in `config.yaml` or by passing `--always-listen` to the CLI. Use this with care — enabling `always_listen` means every captured phrase will be interpreted as a command.
+- By default this skeleton used a wake word (e.g., "hey gng"). If you find the wake word annoying you can disable it and let the assistant process all input immediately by setting `always_listen: true` in `config.yaml` or by passing `--always-listen` to the CLI. Use this with care - enabling `always_listen` means every captured phrase will be interpreted as a command.
 - Enable `allow_execution: true` carefully in `config.yaml` when you're ready to allow system commands
 - Add TTS with `pyttsx3` in `executor.execute()` or a separate `tts.py`
 - Add TTS with `pyttsx3` in `executor.execute()` or a separate `tts.py` (now included). To enable voice output set `allow_tts: true` in `config.yaml` and install `pyttsx3`.
